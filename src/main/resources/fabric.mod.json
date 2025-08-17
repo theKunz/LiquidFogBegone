@@ -1,44 +1,40 @@
 {
-	"schemaVersion": 1,
-	"id": "liquidfogbegone",
-	"version": "${version}",
-	"name": "LiquidFogBegone",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/liquidfogbegone/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.liquidfogbegone.LiquidFogBegone"
-		],
-		"client": [
-			"com.liquidfogbegone.LiquidFogBegoneClient"
-		],
-                "modmenu": [
-                    "com.liquidfogbegone.config.LiquidFogBegoneModMenuApiImpl"
-                ]
-	},
-	"mixins": [
-		"liquidfogbegone.mixins.json",
-		{
-			"config": "liquidfogbegone.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21.7",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+    "schemaVersion": 1,
+    "id": "liquidfogbegone",
+    "version": "${version}",
+    "name": "Liquid Fog Begone",
+    "description": "A simple mod that allows for the control of the opacity of fog while in water or lava",
+    "authors": [
+        "theKunz"
+    ],
+    "contact": {
+        "sources": "https://github.com/theKunz/LiquidFogBegone"
+    },
+    "license": "CC0-1.0",
+    "icon": "assets/liquidfogbegone/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+           "com.liquidfogbegone.LiquidFogBegone"
+        ],
+        "client": [
+            "com.liquidfogbegone.LiquidFogBegoneClient"
+        ],
+        "modmenu": [
+            "com.liquidfogbegone.config.ModMenuApiImpl"
+        ]
+    },
+    "mixins": [
+        "liquidfogbegone.mixins.json",
+        {
+            "config": "liquidfogbegone.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.9",
+        "minecraft": "~1.21.7",
+        "java": ">=21",
+        "fabric-api": "*"
+    }
 }

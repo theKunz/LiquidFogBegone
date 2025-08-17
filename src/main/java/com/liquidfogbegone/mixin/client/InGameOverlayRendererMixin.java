@@ -11,17 +11,16 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import de.maxhenkel.configbuilder.entry.ConfigEntry;
 
-import com.liquidfogbegone.config.LavaConfig;
 import com.liquidfogbegone.config.ModConfig;
-import net.minecraft.client.render.RenderLayer;
 
 @Mixin(InGameOverlayRenderer.class)
 @Environment(value = EnvType.CLIENT)
 public class InGameOverlayRendererMixin {
     @Inject(at = @At("HEAD"), method = "renderFireOverlay", cancellable = true)
     private static void removeFireOverlay(MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo ci) {
-        LavaConfig lavaConfig = ModConfig.get().lavaConfig;
+        var userConfigs = ModConfig.GetUserConfigs();
         
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         
@@ -29,8 +28,8 @@ public class InGameOverlayRendererMixin {
             return;
         }
         
-        boolean shouldRemoveLavaFireEffect = lavaConfig.removeFireScreenEffectInLava && player.isInLava();
-        boolean shouldRemoveFireEffect = lavaConfig.removeFireScreenEffectIfOnFire && player.isOnFire();
+        boolean shouldRemoveLavaFireEffect = userConfigs.removeFireWhenInLava.get() && player.isInLava();
+        boolean shouldRemoveFireEffect = userConfigs.removeFireWhenOnFire.get() && player.isOnFire();
 
         if (shouldRemoveFireEffect || shouldRemoveLavaFireEffect) {
             ci.cancel();

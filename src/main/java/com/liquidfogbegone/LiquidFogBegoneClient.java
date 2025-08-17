@@ -10,6 +10,6 @@ public class LiquidFogBegoneClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-            ModConfig.init();
+            ModConfig.GetUserConfigs();
 	}
 }
