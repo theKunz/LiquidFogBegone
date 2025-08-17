@@ -20,16 +20,19 @@ import net.minecraft.text.TranslatableTextContent;
 public class ModConfig{
     private static UserConfig CONFIG;
     
-    public static UserConfig GetUserConfigs() {
+    public static void InitUserConfigs() {
         if (CONFIG == null) {
           CONFIG = de.maxhenkel.configbuilder.ConfigBuilder.builder(UserConfig::new).path(Path.of(".").resolve("config").resolve("liquidfogbegone.config")).build();
         }
-        
+    }
+    
+    public static UserConfig GetUserConfigs() {
+        InitUserConfigs();
         return CONFIG;
     }
     
     public static Screen CreateConfigScreen(Screen parent) {
-        GetUserConfigs();
+        InitUserConfigs();
         
         ConfigBuilder builder = ConfigBuilder
             .create()

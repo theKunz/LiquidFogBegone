@@ -1,20 +1,4 @@
 {
-  "mappings": {
-    "com/liquidfogbegone/mixin/client/FogRendererMixin": {
-      "getFogColor": "Lnet/minecraft/class_758;method_62185(Lnet/minecraft/class_4184;FLnet/minecraft/class_638;IFZ)Lorg/joml/Vector4f;"
-    },
-    "com/liquidfogbegone/mixin/client/InGameOverlayRendererMixin": {
-      "renderFireOverlay": "Lnet/minecraft/class_4603;method_23070(Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;)V"
-    }
-  },
-  "data": {
-    "named:intermediary": {
-      "com/liquidfogbegone/mixin/client/FogRendererMixin": {
-        "getFogColor": "Lnet/minecraft/class_758;method_62185(Lnet/minecraft/class_4184;FLnet/minecraft/class_638;IFZ)Lorg/joml/Vector4f;"
-      },
-      "com/liquidfogbegone/mixin/client/InGameOverlayRendererMixin": {
-        "renderFireOverlay": "Lnet/minecraft/class_4603;method_23070(Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;)V"
-      }
-    }
-  }
+  "mappings": {},
+  "data": {}
 }
