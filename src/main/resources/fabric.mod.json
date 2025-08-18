@@ -10,9 +10,9 @@
     "contact": {
         "sources": "https://github.com/theKunz/LiquidFogBegone"
     },
-    "license": "CC0-1.0",
+    "license": "MIT",
     "icon": "assets/liquidfogbegone/icon.png",
-    "environment": "*",
+    "environment": "client",
     "entrypoints": {
         "main": [
            "com.liquidfogbegone.LiquidFogBegone"
